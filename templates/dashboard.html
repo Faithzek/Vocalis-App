@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vocalis Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <header>
+            <h1>Vocalis 🌿</h1>
+            <p id="greeting">Loading your profile...</p>
+        </header>
+
+        <div class="voice-section">
+            <button id="recordBtn" class="mic-button">
+                <span class="mic-icon">🎤</span>
+                <span id="btnText">Start Listening</span>
+            </button>
+            <p id="status">Ready to help.</p>
+        </div>
+
+        <div class="text-boxes">
+            <div class="box">
+                <h3>What I Heard</h3>
+                <div id="rawText" class="text-display">...</div>
+            </div>
+            <div class="box">
+                <h3>Vocalis Suggests</h3>
+                <div id="cleanText" class="text-display highlight">...</div>
+            </div>
+        </div>
+        
+        <button onclick="window.location.href='/'" class="btn-link">Update Profile</button>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

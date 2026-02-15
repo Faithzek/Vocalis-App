@@ -1,0 +1,15 @@
+Raw: hey how are you doing
+Cleaned: Hey how are you doing.
+---
+Raw: okay
+Cleaned: Okay.
+---
+Raw: so yeah
+Cleaned: So yeah.
+---
+Raw: are you erasing the what
+Cleaned: Are you erasing the what?
+---
+Raw: then
+Cleaned: Then.
+---

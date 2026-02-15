@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Vocalis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome to Vocalis 🌿</h1>
+        <p>A calm space where your voice matters.</p>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label>Speech Support Type</label>
+            <select id="supportType">
+                <option value="Stuttering">Stuttering</option>
+            </select>
+        </div>
+        <div class="form-group">
+           <label>Sounds or letters you struggle with (Optional)</label>
+           <input type="text" id="specificSounds" placeholder="e.g. S, B, K">
+           <small>This helps Vocalis listen more closely to those sounds.</small>
+        </div>
+        <button onclick="saveAndContinue()" class="btn-primary">Start using Vocalis</button>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
