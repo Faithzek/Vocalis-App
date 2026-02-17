@@ -1,8 +1,13 @@
 import json
 import os
 from flask import Flask, render_template, request, jsonify
+import redis
 
 app = Flask(__name__)
+
+
+# Connect to Redis
+r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
 
 from flask import send_from_directory
 
@@ -20,6 +25,16 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
+
+@app.route('/api/get_transcripts', methods=['GET'])
+def get_transcripts():
+    # Get the last item in the Redis list (latest transcript)
+    item = r.lindex('transcript', -1)  # -1 = last element
+    if item:
+        transcript = {"raw": item, "cleaned": item}  # Use same text for raw & cleaned
+        return jsonify(transcript)
+    else:
+        return jsonify({})  # Return empty JSON if no transcripts
 
 @app.route('/api/save_profile', methods=['POST'])
 def save_profile():
